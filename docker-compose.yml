@@ -1,0 +1,32 @@
+version: "3.3"
+services:
+  app:
+    container_name: api-server
+    build:
+      context: ./APIServer
+      dockerfile: Dockerfile
+    ports: 
+      - "5000:5000"
+    depends_on:
+        - redisdb
+    environment:
+        - REDIS_HOST=redisdb
+        - REDIS_PORT=6379
+        - USER=USER
+        - PASS=PASS
+  redisdb:
+      image: redis
+      ports:
+          - "6379"
+      volumes:
+          - redis_data:/data
+  camera:
+    container_name: camera
+    build:
+      context: ./Camera
+      dockerfile: Dockerfile
+    depends_on:
+        - app
+    network_mode: host
+volumes:
+    redis_data:

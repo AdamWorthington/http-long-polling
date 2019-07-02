@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "160e8048-b65c-4c87-b32c-d4fe78306f2d",
+		"name": "http-long-polling",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Logs",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "PASS",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "USER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "USER",
+						"value": "USER",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PASS",
+						"value": "PASS",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://0.0.0.0:5000/logs/",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"logs",
+						""
+					]
+				},
+				"description": "Get logs from the camera."
+			},
+			"response": []
+		},
+		{
+			"name": "No Auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "USER",
+						"value": "USER",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "PASS",
+						"value": "PASS",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://0.0.0.0:5000/logs/",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"logs",
+						""
+					]
+				},
+				"description": "Should return with missing creds."
+			},
+			"response": []
+		}
+	]
+}
