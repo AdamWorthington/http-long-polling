@@ -1,32 +1,5 @@
 # http-long-polling
 
-## To run
-
-```bash
-docker-compose build
-docker-compose up
-```
-
-This will kick off three containers
-
-- api server
-- camera
-- redis
-
-## To query
-
-### Postman
-
-I have included a basic postman collection for simple queries under /postman.
-
-[Directions to import postman collections.](https://learning.getpostman.com/docs/postman/collections/data_formats/#importing-postman-data)
-
-### Curl
-
-```bash
-curl --user USER:PASS localhost:5000/logs/
-```
-
 ## Explination
 
 **tl;dr: Enables servers to push information to http clients.**
@@ -66,3 +39,30 @@ Thread Events:
 ![thread-events](./media/thread_events.png)
 
 You can see that our thread events utilize only 1/10 the CPU resources that our busy waiting method does. It also allows for more graceful http timeouts between the camera and api server.
+
+## To run
+
+```bash
+docker-compose build
+docker-compose up
+```
+
+This will kick off three containers
+
+- api server
+- camera
+- redis
+
+## To query
+
+### Postman
+
+I have included a basic postman collection for simple queries under /postman.
+
+[Directions to import postman collections.](https://learning.getpostman.com/docs/postman/collections/data_formats/#importing-postman-data)
+
+### Curl
+
+```bash
+curl --user USER:PASS localhost:5000/logs/
+```
